@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feliz Dia dos Namorados</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #000428, #004e92); /* fundo degrade azul escuro */
+    color: #fff;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Fundo estrelado simples */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: transparent url('https://i.postimg.cc/cL1QmWh7/starfield.png') repeat;
+    z-index: 0;
+  }
+
+  #inicio, #galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  #galeria {
+    display: none;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #ff4f81;
+  }
+
+  button {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px #ff4f81;
+    background: #ff4f81;
+    color: white;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Botão Não que foge */
+  #btnNao {
+    position: relative;
+  }
+
+  #btnNao.fugir {
+    position: absolute;
+  }
+
+  /* Foto grande */
+  #foto-grande {
+    max-width: 90vw;
+    max-height: 50vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff4f81;
+    margin-bottom: 15px;
+  }
+
+  /* Contador */
+  #contador {
+    font-size: 1.7rem;
+    background: rgba(255, 79, 129, 0.3);
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #ff4f81;
+    margin-bottom: 30px;
+  }
+
+  /* Fotos menores com frases alternadas */
+  .item-foto {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+    max-width: 90vw;
+  }
+
+  .item-foto:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .item-foto:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .item-foto img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #ff4f81;
+  }
+
+  .item-foto p {
+    max-width: 60%;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 6px #000;
+  }
+
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    color: #ffb6c1;
+    margin-top: 50px;
+    text-shadow: 0 0 5px #ff4f81;
+  }
+
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Tela inicial -->
+<div id="inicio">
+  <h1>Está preparado?</h1>
+  <button id="btnSim">Sim</button>
+  <button id="btnNao">Não</button>
+</div>
+
+<!-- Tela galeria -->
+<div id="galeria">
+  <h1>Feliz Dia dos Namorados</h1>
+  <img src="https://i.postimg.cc/bJs9ZWhS/IMG-2261.jpg" alt="Foto grande" id="foto-grande" />
+
+  <div id="contador" aria-live="polite">
+    <!-- Contador será inserido aqui -->
+  </div>
+
+  <!-- Fotos menores com frases -->
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/hP9bQVHs/IMG-2262.jpg" alt="Foto 2" />
+    <p>Você é o motivo do meu sorriso todos os dias.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/TY8JPtHh/IMG-2263.jpg" alt="Foto 3" />
+    <p>Com você, cada momento é único e especial.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/FzSbZS19/IMG-2264.jpg" alt="Foto 4" />
+    <p>Nosso amor é o meu lugar favorito.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/gcLKdCsf/IMG-2265.jpg" alt="Foto 5" />
+    <p>Cada dia ao seu lado é uma nova aventura.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/7LQgr92H/IMG-2266.jpg" alt="Foto 6" />
+    <p>Você é a melhor parte da minha vida.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/g00v7Qrt/IMG-2267.jpg" alt="Foto 7" />
+    <p>Te amar é a minha maior felicidade.</p>
+  </div>
+  <div class="item-foto">
+    <img src="https://i.postimg.cc/R0nc9fQw/IMG-1678.jpg" alt="Foto 8" />
+    <p>Juntos, somos invencíveis.</p>
+  </div>
+
+  <footer>Com amor e carinho, sua mulher.</footer>
+
+  <!-- Player do YouTube (com controles, escondido na tela) -->
+  <iframe id="youtube-player" 
+          width="0" height="0" 
+          src="https://www.youtube.com/embed/_87eki_JPT0?enablejsapi=1&version=3&rel=0" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+  </iframe>
+</div>
+
+<script>
+  // Função contador regressivo desde 28/07/2019 até agora
+  function atualizarContador() {
+    const inicioRelacionamento = new Date('2019-07-28T00:00:00');
+    const agora = new Date();
+    let diff = agora - inicioRelacionamento;
+
+    const msPorSegundo = 1000;
+    const msPorMinuto = msPorSegundo * 60;
+    const msPorHora = msPorMinuto * 60;
+    const msPorDia = msPorHora * 24;
+    const msPorMes = msPorDia * 30.44; // média
+    const msPorAno = msPorDia * 365.25;
+
+    const anos = Math.floor(diff / msPorAno);
+    diff -= anos * msPorAno;
+
+    const meses = Math.floor(diff / msPorMes);
+    diff -= meses * msPorMes;
+
+    const dias = Math.floor(diff / msPorDia);
+    diff -= dias * msPorDia;
+
+    const horas = Math.floor(diff / msPorHora);
+    diff -= horas * msPorHora;
+
+    const minutos = Math.floor(diff / msPorMinuto);
+    diff -= minutos * msPorMinuto;
+
+    const segundos = Math.floor(diff / msPorSegundo);
+
+    const texto = `${anos} ano${anos !== 1 ? 's' : ''}, ${meses} mês${meses !== 1 ? 'es' : ''}, ${dias} dia${dias !== 1 ? 's' : ''}, ${horas} hora${horas !== 1 ? 's' : ''}, ${minutos} minuto${minutos !== 1 ? 's' : ''} e ${segundos} segundo${segundos !== 1 ? 's' : ''}`;
+
+    document.getElementById('contador').textContent = `Estamos juntos há ${texto}`;
+  }
+
+  // Atualiza o contador a cada segundo
+  setInterval(atualizarContador, 1000);
+  atualizarContador();
+
+  // Lógica dos botões
+  const btnSim = document.getElementById('btnSim');
+  const btnNao = document.getElementById('btnNao');
+  const telaInicio = document.getElementById('inicio');
+  const telaGaleria = document.getElementById('galeria');
+
+  // Para movimentar o botão "Não" que foge
+  btnNao.addEventListener('mouseenter', () => {
+    const maxX = window.innerWidth - btnNao.offsetWidth;
+    const maxY = window.innerHeight - btnNao.offsetHeight;
+
+    // Posiciona em local aleatório dentro da janela
+    const novoX = Math.floor(Math.random() * maxX);
+    const novoY = Math.floor(Math.random() * maxY);
+
+    btnNao.style.position = 'absolute';
+    btnNao.style.left = `${novoX}px`;
+    btnNao.style.top = `${novoY}px`;
+  });
+
+  btnSim.addEventListener('click', () => {
+    telaInicio.style.display = 'none';
+    telaGaleria.style.display = 'flex';
+    tocarMusica();
+  });
+
+  // Função para tocar música via API do YouTube
+  function tocarMusica() {
+    // Criar o player do YouTube via API JS para permitir autoplay e controle
+    if (!window.YT) {
+      // Carregar a API do YouTube
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+    } else {
+      criarPlayer();
+    }
+  }
+
+  // Função que cria player e inicia a música
+  function criarPlayer() {
+    window.player = new YT.Player('youtube-player', {
+      events: {
+        'onReady': function(event) {
+          event.target.setVolume(50);
+          event.target.playVideo();
+        }
+      }
+    });
+  }
+
+  // Quando API carregada, cria player
+  function onYouTubeIframeAPIReady() {
+    criarPlayer();
+  }
+</script>
+</body>
+</html>
